@@ -1,0 +1,22 @@
+{
+  "name": "kalkulator-bmi",
+  "version": "1.0.0",
+  "description": "kalkulator magdy",
+  "author": "Magdalena Andrzejczuk",
+  "main": "src/index.html",
+  "scripts": {
+    "test": "cypress open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/magda-andrzejczuk/kalkulator-bmi.git"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/magda-andrzejczuk/kalkulator-bmi/issues"
+  },
+  "homepage": "https://github.com/magda-andrzejczuk/kalkulator-bmi#readme",
+  "devDependencies": {
+    "cypress": "^9.7.0"
+  }
+}
