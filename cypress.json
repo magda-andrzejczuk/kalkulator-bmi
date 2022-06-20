@@ -1,1 +1,14 @@
-{}
+{
+    "projectId": "8ab5ti",
+    "retries": 2,
+    "viewportHeight": 1080,
+    "wiewportWidth": 1920,
+    "reporter": "mochawesome",
+    "reporterOptions": {
+      "reportFilename": "[status]_[datetime]-[name]-report",
+      "timestamp": "isoDateTime",
+      "overwrite": false,
+      "html": true,
+      "json": true
+    }
+}
