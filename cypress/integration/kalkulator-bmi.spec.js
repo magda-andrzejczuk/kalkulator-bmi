@@ -9,13 +9,17 @@ describe("kalkulator BMI", () => {
     cy.visit("https://magda-andrzejczuk.github.io/kalkulator-bmi/src/");
   });
 
-  it("Test1: zawiera 3 sekcje: 'Parametry', 'Wynik', 'Historia pomiarów'", () => {
-    cy.get(".sekcje div.modul").should("have.length", 3);
-    cy.contains("Parametry").should("exist");
-    cy.contains("Wynik").should("exist");
-    cy.contains("Historia pomiarów").should("exist");
-    //Aplikacja zawiera 3 sekcje: 'Parametry', 'Wynik', 'Historia pomiarów'
-  });
+  it(
+    "Test1: zawiera 3 sekcje: 'Parametry', 'Wynik', 'Historia pomiarów'",
+    { tags: "local" },
+    () => {
+      cy.get(".sekcje div.modul").should("have.length", 3);
+      cy.contains("Parametry").should("exist");
+      cy.contains("Wynik").should("exist");
+      cy.contains("Historia pomiarów").should("exist");
+      //Aplikacja zawiera 3 sekcje: 'Parametry', 'Wynik', 'Historia pomiarów'
+    }
+  );
 
   it("Test2: poprawnie wylicza BMI", () => {
     // Wpisz wagę, wzrost a następnie kliknij przycisk zatwierdź
@@ -39,15 +43,19 @@ describe("kalkulator BMI", () => {
     parametryModule.selectWzrostInput().should("be.empty");
   });
 
-  it("Test4: po wpisaniu błędnej wagi, wyświetla komunikat o niepoprawności", () => {
-    //Wpisz niepoprawną wagę <40 kg lub >200 kg, poprawny wzrost i kliknij przycisk 'zatwierdź'
-    parametryModule.selectWzrostInput().type("160");
-    parametryModule.selectZatwierdzButton().click();
-    // Pojawia się komunikat o niepoprawności wagi
-    cy.get("#podanaWaga").should("have.text", "nie jest poprawna");
-    cy.get("#podanyWzrost").should("have.text", "160 cm");
-    cy.get("#wyliczoneBMI").should("have.text", "-");
-  });
+  it(
+    "Test4: po wpisaniu błędnej wagi, wyświetla komunikat o niepoprawności",
+    { tags: "local" },
+    () => {
+      //Wpisz niepoprawną wagę <40 kg lub >200 kg, poprawny wzrost i kliknij przycisk 'zatwierdź'
+      parametryModule.selectWzrostInput().type("160");
+      parametryModule.selectZatwierdzButton().click();
+      // Pojawia się komunikat o niepoprawności wagi
+      cy.get("#podanaWaga").should("have.text", "nie jest poprawna");
+      cy.get("#podanyWzrost").should("have.text", "160 cm");
+      cy.get("#wyliczoneBMI").should("have.text", "-");
+    }
+  );
 
   it("Test5: po wpisaniu błędnego wzrostu, wyświetla komunikat o niepoprawności", () => {
     //Wpisz wagę, niepoprawny wzrost  <120 cm lub > 240 cm i kliknij przycisk 'zatwierdź'
@@ -71,14 +79,18 @@ describe("kalkulator BMI", () => {
     cy.get("#wyliczoneBMI").should("have.text", "-");
   });
 
-  it("Test7: po wpisaniu poprawnych wartości, zapisze uzyskany wynik do historii pomiarów", () => {
-    //  Wpisz wagę, wzrost i kliknij przycisk 'zatwierdź'
-    parametryModule.selectWagaInput().type("40");
-    parametryModule.selectWzrostInput().type("120");
-    parametryModule.selectZatwierdzButton().click();
-    // Wynik zapisał się w historii pomiarów
-    cy.get("#historiaPomiarow li").should("exist");
-  });
+  it(
+    "Test7: po wpisaniu poprawnych wartości, zapisze uzyskany wynik do historii pomiarów",
+    { tags: "local" },
+    () => {
+      //  Wpisz wagę, wzrost i kliknij przycisk 'zatwierdź'
+      parametryModule.selectWagaInput().type("40");
+      parametryModule.selectWzrostInput().type("120");
+      parametryModule.selectZatwierdzButton().click();
+      // Wynik zapisał się w historii pomiarów
+      cy.get("#historiaPomiarow li").should("exist");
+    }
+  );
 
   context("po uzyskaniu kilku poprawnych wyników", () => {
     beforeEach(() => {
