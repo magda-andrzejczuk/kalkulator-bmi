@@ -13,6 +13,6 @@ Opis testów znajduje się w repozytorium w pliku: `testyCypress.pdf`
 ✔️ Tagi \
 ✔️ PageObject \
 ❌ Praca w zespole \
-✔️ Dashboard \
+✔️ Dashboard
 
 Made with 😇 by Magdalena Andrzejczuk
