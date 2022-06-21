@@ -12,7 +12,7 @@ Opis testów znajduje się w repozytorium w pliku: `testyCypress.pdf`
 ❌ Fixtures \
 ✔️ Tagi \
 ✔️ PageObject \
-❌ Praca w zespole \ 
+❌ Praca w zespole \
 ✔️ Dashboard \
 
 Made with 😇 by Magdalena Andrzejczuk
